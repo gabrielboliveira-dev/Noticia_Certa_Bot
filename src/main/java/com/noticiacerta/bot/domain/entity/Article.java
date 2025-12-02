@@ -42,6 +42,8 @@ public class Article {
     public LocalDateTime getPublishedAt() { return publishedAt; }
 
     public boolean isFresh() {
-        return publishedAt.isAfter(LocalDateTime.now().minusHours(1));
+        if (publishedAt == null) return false;
+
+        return publishedAt.isAfter(LocalDateTime.now().minusHours(24));
     }
 }
