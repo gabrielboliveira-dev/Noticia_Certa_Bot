@@ -24,6 +24,14 @@ public class User {
         this.active = true;
     }
 
+    public User(UUID id, Long telegramChatId, String username, List<String> interestedTopics, boolean active) {
+        this.id = id;
+        this.telegramChatId = telegramChatId;
+        this.username = username;
+        this.interestedTopics = new ArrayList<>(interestedTopics);
+        this.active = active;
+    }
+
     public void addInterest(String topic) {
         if (topic != null && !topic.isBlank() && !interestedTopics.contains(topic.toLowerCase())) {
             this.interestedTopics.add(topic.toLowerCase());
@@ -42,10 +50,20 @@ public class User {
         this.active = true;
     }
 
-    public UUID getId() { return id; }
-    public Long getTelegramChatId() { return telegramChatId; }
-    public String getUsername() { return username; }
-    public boolean isActive() { return active; }
+    public UUID getId() {
+        return id;
+    }
+
+    public Long getTelegramChatId() {
+        return telegramChatId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public boolean isActive() {
+        return active;
+    }
 
     public List<String> getInterestedTopics() {
         return Collections.unmodifiableList(interestedTopics);
