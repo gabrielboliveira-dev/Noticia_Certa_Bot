@@ -8,4 +8,5 @@ public interface ArticleRepository {
     Article save(Article article);
     boolean existsByUrl(String url);
     List<Article> findRecentArticles(LocalDateTime since);
+    List<Article> findTop5ByOrderByPublishedAtDesc();
 }

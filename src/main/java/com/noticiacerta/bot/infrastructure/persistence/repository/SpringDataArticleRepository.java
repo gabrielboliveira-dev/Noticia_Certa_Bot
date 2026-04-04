@@ -15,4 +15,6 @@ public interface SpringDataArticleRepository extends JpaRepository<ArticleJpaEnt
 
     @Query("SELECT a FROM ArticleJpaEntity a WHERE a.publishedAt >= :sinceDate")
     List<ArticleJpaEntity> findRecentArticles(@Param("sinceDate") LocalDateTime sinceDate);
+
+    List<ArticleJpaEntity> findTop5ByOrderByPublishedAtDesc();
 }

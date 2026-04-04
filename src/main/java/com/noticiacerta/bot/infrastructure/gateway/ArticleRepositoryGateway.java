@@ -40,6 +40,14 @@ public class ArticleRepositoryGateway implements ArticleRepository {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Article> findTop5ByOrderByPublishedAtDesc() {
+        return springRepository.findTop5ByOrderByPublishedAtDesc()
+                .stream()
+                .map(this::toDomainEntity)
+                .collect(Collectors.toList());
+    }
+
     private ArticleJpaEntity toJpaEntity(Article domain) {
         return new ArticleJpaEntity(
                 null,

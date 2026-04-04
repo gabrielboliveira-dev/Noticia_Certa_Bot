@@ -3,9 +3,11 @@ package com.noticiacerta.bot.application.usecase;
 import com.noticiacerta.bot.application.gateway.NotificationGateway;
 import com.noticiacerta.bot.domain.entity.Article;
 import com.noticiacerta.bot.domain.repository.ArticleRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Service
 public class IngestArticleUseCase {
 
     private final ArticleRepository articleRepository;

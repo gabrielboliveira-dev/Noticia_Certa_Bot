@@ -3,10 +3,10 @@ package com.noticiacerta.bot.infrastructure.messaging.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
 
 @Configuration
 public class RabbitMQConfig {
@@ -20,6 +20,6 @@ public class RabbitMQConfig {
 
     @Bean
     public MessageConverter jsonMessageConverter(ObjectMapper objectMapper) {
-        return new JacksonJsonMessageConverter();
+        return new Jackson2JsonMessageConverter(objectMapper);
     }
 }
