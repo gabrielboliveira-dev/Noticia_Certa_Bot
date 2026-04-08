@@ -35,6 +35,8 @@ Este projeto utiliza uma stack moderna e amplamente adotada no ecossistema Java:
     *   *Justificativa:* Lombok reduz o boilerplate code; JAXB API é necessária para compatibilidade com algumas bibliotecas em Java 9+.
 *   **Testes:** JUnit 5, Mockito, Testcontainers
     *   *Justificativa:* Ferramentas padrão para testes unitários e de integração, garantindo a qualidade e a robustez do código.
+- **CI/CD:** GitHub Actions
+    *   *Justificativa:* Pipeline automatizado para validação de build e testes a cada novo commit ou Pull Request.
 
 ---
 
